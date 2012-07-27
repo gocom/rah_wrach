@@ -1,9 +1,9 @@
 h1. rah_write_each_section
 
-p. A tiny plugin that allows users pick section before going to the actual writing page. Therefor, in example new will go to the correct section by the writer that possibly is your client, not you that knows everything about Textpattern. This plugin is "an answer to a post by cuba":http://forum.textpattern.com/viewtopic.php?id=27652
+p. A tiny plugin that allows users to pick section before going to the actual writing panel. This plugin is "an answer to a post by cuba":http://forum.textpattern.com/viewtopic.php?id=27652.
 
-* Version: 0.1
-* Updated: 2008/07/13 19:10 GMT+2
+* Version: 0.2
+* Updated: 2010/12/22 21:55 UTC
 
 h3. Table of Contents
 
@@ -11,28 +11,45 @@ h3. Table of Contents
 * "List of features":#list-of-features
 * "Requirements":#requirements
 * "Installation and usage":#installation-and-usage
+* "Changelog":#changelog
 
 h3(#intro-and-description). Intro and description
 
-p. The plugin, rah_write_each_section allows backend users pick a section before going to the write panel. Therefor posts will always go to the correct sections. Usage is simple and after posting the section is, ofcorse, changable. Also the regular writing view is available by "Advanced options"-writing method on the section select screen.
+p. Rah_write_each_section adds extra step to article posting; the plugin makes site authors pick the section before going to the actual write panel. The extra step will hopefully increase the change of the articles actually going to correct sections. Super-serious news don't look that nice in Jokes section.
 
 h3(#list-of-features). List of features
 
-* Outputs list of sections before actual write panel
-* Only sections that have feeds enabled are in the list
-* Valid XHTML and clean Javascript
+* Adds extra step to article publishing: outputs list of sections before the actual write panel.
+* Only sections that have feeds enabled are shown in the list.
+* Outputs valid HTML and clean Javascript.
 
 h3(#requirements). Requirements
 
 p. Rah_write_each_section minimum requirements:
 
-* Textpattern 4.0.4+
-* Textpattern with jQuery
+* Textpattern 4.0.7+
+* jQuery (bundled with Textpattern).
 
 p. Recommended:
 
-* Textpattern 4.0.6+
+* Textpattern 4.2.0+
 
 h3(#installation-and-usage). Installation and usage
 
-p. The general simple behavior stands: paste plugin code to the plugin installer textarea and run the automatic setup. Then just activate the plugin and it's ready, the section list is shown before writing panel.
+# Navigate to your Textpattern installation plugin pane: _TXP/Admin/Plugins_.
+# Paste the plugin code to the plugin installer textarea.
+# Run the automatic setup.
+# When the installation is done, just activate the plugin.
+# All done. The section list will be now on shown before writing panel.
+
+h3(#changelog). Changelog
+
+p. *Version 0.2*
+
+* Now compatible with TXP 4.3.0. Thank you, "Phil Wareham":http://forum.textpattern.com/viewtopic.php?pid=238736#p238736, for reporting.
+* Moved JavaScript and inline styles to @<head>@.
+* Now requires TXP 4.0.7 or newer.
+
+p. *Version 0.1*
+
+* Initial release.
