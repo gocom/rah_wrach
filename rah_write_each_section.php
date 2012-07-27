@@ -58,7 +58,7 @@ class rah_write_each_section {
 				#rah_write_each_section_container .information,
 				#rah_write_each_section_container .success {
 					float: right;
-					margin: 0 0 0 0.3em;
+					margin-left: 0.3em;
 				}
 				form#article_form {
 					display: none;
@@ -85,7 +85,7 @@ EOF;
 		
 		$rs = 
 			safe_rows(
-				'title, name, (SELECT count(*) FROM '.safe_pfx('textpattern').' articles WHERE articles.Section = txp_section.name) AS article_count, in_rss',
+				'title, name, (SELECT count(*) FROM '.safe_pfx('textpattern').' articles WHERE articles.Section = txp_section.name) AS article_count, in_rss, on_frontpage',
 				'txp_section',
 				"name != 'default' order by title ASC"
 			);
@@ -93,13 +93,14 @@ EOF;
 		foreach($rs as $a) {
 			$out[] = 
 				'<div class="txp-grid-cell">'.
-					'<p>'.
+					'<p class="clearfix">'.
 						'<a href="?event=article&amp;Section='.txpspecialchars($a['name']).'">'.
 							txpspecialchars($a['title']).
 						'</a>'.n.
-						'<a href="?event=list'.a.'search_method=section'.a.'crit=&quot;'.txpspecialchars($a['name']).'&quot;" class="information">'.$a['article_count'].'</a>'.
-							($a['in_rss'] ? '<span class="success">RSS</span>' : '').
-						'<br />'.$a['name'].
+						'<a href="?event=list'.a.'search_method=section'.a.'crit=&quot;'.txpspecialchars($a['name']).'&quot;" class="information"><small>'.$a['article_count'].'</small></a><br />'.
+						$a['name'].
+						($a['on_frontpage'] ? '<small class="success">FRONT</small>' : '').
+						($a['in_rss'] ? '<small class="success">RSS</small>' : '').
 					'</p>'.
 				'</div>';
 		}
