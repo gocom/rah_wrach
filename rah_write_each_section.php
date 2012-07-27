@@ -29,15 +29,11 @@
 		if($event != 'article')
 			return;
 
-		extract(
-			gpsa(
-				array(
-					'ID',
-					'Section',
-					'view'
-				)
-			)
-		);
+		extract(gpsa(array(
+			'ID',
+			'Section',
+			'view'
+		)));
 
 		echo <<<EOF
 			<style type="text/css">
@@ -64,15 +60,11 @@ EOF;
 
 	function rah_write_each_section() {
 		
-		extract(
-			gpsa(
-				array(
-					'ID',
-					'Section',
-					'view'
-				)
-			)
-		);
+		extract(gpsa(array(
+			'ID',
+			'Section',
+			'view'
+		)));
 
 		if(!$Section && !$ID && !$view) {
 			
