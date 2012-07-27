@@ -120,7 +120,7 @@ EOF;
 
 	public function select() {
 		
-		global $prefs;
+		global $prefs, $txp_user;
 		
 		extract(gpsa(array(
 			'ID',
@@ -134,8 +134,12 @@ EOF;
 		
 		$sql[] = "name != 'default'";
 		
-		if($prefs[__CLASS__.'_show_sections']) {
-			$sql[] = 'name IN('.implode(',', quote_list(do_list($prefs[__CLASS__.'_show_sections']))).')';
+		if(!$s = get_pref(__CLASS__.'_s.'.$txp_user)) {
+			$s = $prefs[__CLASS__.'_show_sections'];
+		}
+		
+		if($s) {
+			$sql[] = 'name IN('.implode(',', quote_list(do_list($s))).')';
 		}
 		
 		$rs = 
