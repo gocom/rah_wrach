@@ -19,6 +19,15 @@
 
 class rah_write_each_section {
 	
+	static public $version = '0.2';
+	
+	/**
+	 * Installer
+	 */
+	
+	static public function install($event='', $step='') {
+	}
+	
 	/**
 	 * Constructor
 	 */
