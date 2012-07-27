@@ -43,6 +43,23 @@ class rah_wrach {
 			return;
 		}
 		
+		$position = 250;
+		
+		foreach(
+			array(
+				'show_sections' => array('text_input', ''),
+			) as $name => $val
+		) {
+			$n = __CLASS__.'_'.$name;
+			
+			if(!isset($prefs[$n])) {
+				set_pref($n, $val[1], __CLASS__, PREF_ADVANCED, $val[0], $position);
+				$prefs[$n] = $val[1];
+			}
+			
+			$position++;
+		}
+		
 		set_pref(__CLASS__.'_version', self::$version, __CLASS__, 2, '', 0);
 		$prefs[__CLASS__.'_version'] = self::$version;
 	}
@@ -52,6 +69,7 @@ class rah_wrach {
 	 */
 	
 	public function __construct() {
+		self::install();
 		register_callback(array($this, 'select'), 'article');
 		register_callback(array($this, 'head'), 'admin_side', 'head_end');
 		register_callback(array(__CLASS__, 'install'), 'plugin_lifecycle.'.__CLASS__);
@@ -102,6 +120,8 @@ EOF;
 
 	public function select() {
 		
+		global $prefs;
+		
 		extract(gpsa(array(
 			'ID',
 			'Section',
@@ -112,11 +132,17 @@ EOF;
 			return;
 		}
 		
+		$sql[] = "name != 'default'";
+		
+		if($prefs[__CLASS__.'_show_sections']) {
+			$sql[] = 'name IN('.implode(',', quote_list(do_list($prefs[__CLASS__.'_show_sections']))).')';
+		}
+		
 		$rs = 
 			safe_rows(
 				'title, name, (SELECT count(*) FROM '.safe_pfx('textpattern').' articles WHERE articles.Section = txp_section.name) AS article_count, in_rss, on_frontpage',
 				'txp_section',
-				"name != 'default' order by title ASC"
+				implode(' and ', $sql).' order by title ASC'
 			);
 
 		foreach($rs as $a) {
