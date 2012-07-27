@@ -16,12 +16,7 @@ h2. Requirements
 
 p. Rah_write_each_section minimum requirements:
 
-* Textpattern 4.0.7+
-* jQuery (bundled with Textpattern).
-
-p. Recommended:
-
-* Textpattern 4.2.0+
+* Textpattern 4.5.0 or newer.
 
 h2. Installation and usage
 
