@@ -79,34 +79,35 @@ EOF;
 			'view'
 		)));
 
-		if(!$Section && !$ID && !$view) {
-			
-			$rs = 
-				safe_rows(
-					'title, name, (SELECT count(*) FROM '.safe_pfx('textpattern').' articles WHERE articles.Section = txp_section.name) AS article_count, in_rss',
-					'txp_section',
-					"name != 'default' order by title ASC"
-				);
-
-			foreach($rs as $a) {
-				$out[] = 
-					'<div class="txp-grid-cell">'.
-						'<p>'.
-							'<a href="?event=article&amp;Section='.htmlspecialchars($a['name']).'">'.
-								htmlspecialchars($a['title']).
-							'</a>'.n.
-							'<a href="?event=list'.a.'search_method=section'.a.'crit=&quot;'.htmlspecialchars($a['name']).'&quot;" class="information">'.$a['article_count'].'</a>'.
-							($a['in_rss'] ? '<span class="success">RSS</span>' : '').
-							'<br />'.$a['name'].
-						'</p>'.
-					'</div>';
-			}
-			
-			echo 
-				'<h1 class="txp-heading">'.gTxt('rah_write_each_section_title').'</h1>'.
-				'<p class="information alert-block">'.gTxt('rah_write_each_section_start_by').'</p>'.
-				'<div id="rah_write_each_section_container" class="txp-grid">'.implode('', $out).'</div>';
+		if($Section || $ID || $view) {
+			return;
 		}
+			
+		$rs = 
+			safe_rows(
+				'title, name, (SELECT count(*) FROM '.safe_pfx('textpattern').' articles WHERE articles.Section = txp_section.name) AS article_count, in_rss',
+				'txp_section',
+				"name != 'default' order by title ASC"
+			);
+
+		foreach($rs as $a) {
+			$out[] = 
+				'<div class="txp-grid-cell">'.
+					'<p>'.
+						'<a href="?event=article&amp;Section='.htmlspecialchars($a['name']).'">'.
+								htmlspecialchars($a['title']).
+						'</a>'.n.
+						'<a href="?event=list'.a.'search_method=section'.a.'crit=&quot;'.htmlspecialchars($a['name']).'&quot;" class="information">'.$a['article_count'].'</a>'.
+							($a['in_rss'] ? '<span class="success">RSS</span>' : '').
+						'<br />'.$a['name'].
+					'</p>'.
+				'</div>';
+		}
+		
+		echo 
+			'<h1 class="txp-heading">'.gTxt('rah_write_each_section_title').'</h1>'.
+			'<p class="information alert-block">'.gTxt('rah_write_each_section_start_by').'</p>'.
+			'<div id="rah_write_each_section_container" class="txp-grid">'.implode('', $out).'</div>';
 	}
 }
 
