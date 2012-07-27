@@ -100,7 +100,7 @@ class rah_wrach {
 		echo <<<EOF
 			<style type="text/css">
 				#rah_wrach .txp-grid-cell {
-					width: 234px;
+					width: 294px;
 				}
 				#rah_wrach .information,
 				#rah_wrach .success {
