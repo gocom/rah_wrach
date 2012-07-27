@@ -14,10 +14,10 @@
  */
 
 	if(@txpinterface == 'admin') {
-		new rah_write_each_section();
+		new rah_wrach();
 	}
 
-class rah_write_each_section {
+class rah_wrach {
 	
 	static public $version = '0.2';
 	
@@ -26,6 +26,25 @@ class rah_write_each_section {
 	 */
 	
 	static public function install($event='', $step='') {
+		
+		global $prefs;
+		
+		if($step == 'deleted') {
+			
+			safe_delete(
+				'txp_prefs',
+				"name like 'rah\_wrach\_%'"
+			);
+			
+			return;
+		}
+		
+		if((string) get_pref(__CLASS__.'_version') === self::$version) {
+			return;
+		}
+		
+		set_pref(__CLASS__.'_version', self::$version, __CLASS__, 2, '', 0);
+		$prefs[__CLASS__.'_version'] = self::$version;
 	}
 	
 	/**
@@ -35,6 +54,7 @@ class rah_write_each_section {
 	public function __construct() {
 		register_callback(array($this, 'select'), 'article');
 		register_callback(array($this, 'head'), 'admin_side', 'head_end');
+		register_callback(array(__CLASS__, 'install'), 'plugin_lifecycle.'.__CLASS__);
 	}
 
 	/**
@@ -61,11 +81,11 @@ class rah_write_each_section {
 
 		echo <<<EOF
 			<style type="text/css">
-				#rah_write_each_section_container .txp-grid-cell {
+				#rah_wrach .txp-grid-cell {
 					width: 234px;
 				}
-				#rah_write_each_section_container .information,
-				#rah_write_each_section_container .success {
+				#rah_wrach .information,
+				#rah_wrach .success {
 					float: right;
 					margin-left: 0.3em;
 				}
@@ -118,7 +138,7 @@ EOF;
 		echo 
 			'<h1 class="txp-heading">'.gTxt('rah_write_each_section_title').'</h1>'.
 			'<p class="information alert-block">'.gTxt('rah_write_each_section_start_by').'</p>'.
-			'<div id="rah_write_each_section_container" class="txp-grid">'.implode('', $out).'</div>';
+			'<div id="rah_wrach" class="txp-grid">'.implode('', $out).'</div>';
 	}
 }
 
