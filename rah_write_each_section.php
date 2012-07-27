@@ -14,15 +14,25 @@
  */
 
 	if(@txpinterface == 'admin') {
-		register_callback('rah_write_each_section', 'article');
-		register_callback('rah_write_each_section_head', 'admin_side', 'head_end');
+		new rah_write_each_section();
 	}
 
-/**
- * Add styles and JavaScript to the <head>
- */
+class rah_write_each_section {
+	
+	/**
+	 * Constructor
+	 */
+	
+	public function __construct() {
+		register_callback(array($this, 'select'), 'article');
+		register_callback(array($this, 'head'), 'admin_side', 'head_end');
+	}
 
-	function rah_write_each_section_head() {
+	/**
+	 * Add styles and JavaScript to the <head>
+	 */
+
+	public function head() {
 		
 		global $event;
 		
@@ -58,11 +68,11 @@ EOF;
 		}
 	}
 
-/**
- * Adds the extra step to Write panel
- */
+	/**
+	 * Section selection panel
+	 */
 
-	function rah_write_each_section() {
+	public function select() {
 		
 		extract(gpsa(array(
 			'ID',
@@ -96,5 +106,6 @@ EOF;
 			echo '<div id="rah_write_each_section_container" class="txp-grid">'.implode('', $out).'</div>';
 		}
 	}
+}
 
 ?>
