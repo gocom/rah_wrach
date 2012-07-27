@@ -1,20 +1,26 @@
-<?php	##################
-	#
-	#	rah_write_each_section-plugin for Textpattern
-	#	version 0.2
-	#	by Jukka Svahn
-	#	http://rahforum.biz
-	#
-	###################
+<?php
+
+/**
+ * Rah_write_each_section plugin for Textpattern CMS.
+ *
+ * @author Jukka Svahn
+ * @date 2008-
+ * @license GNU GPLv2
+ * @link http://rahforum.biz/plugins/rah_write_each_section
+ * 
+ * Copyright (C) 2011 Jukka Svahn <http://rahforum.biz>
+ * Licensed under GNU Genral Public License version 2
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ */
 
 	if(@txpinterface == 'admin') {
-		register_callback('rah_write_each_section','article');
-		register_callback('rah_write_each_section_head','admin_side','head_end');
+		register_callback('rah_write_each_section', 'article');
+		register_callback('rah_write_each_section_head', 'admin_side', 'head_end');
 	}
 
 /**
-	Add styles and JavaScript to the <head>
-*/
+ * Add styles and JavaScript to the <head>
+ */
 
 	function rah_write_each_section_head() {
 		
@@ -67,8 +73,8 @@ EOF;
 	}
 
 /**
-	Adds the extra step to Write panel
-*/
+ * Adds the extra step to Write panel
+ */
 
 	function rah_write_each_section() {
 		
@@ -108,3 +114,5 @@ EOF;
 				'</div>'.n;
 		}
 	}
+
+?>
