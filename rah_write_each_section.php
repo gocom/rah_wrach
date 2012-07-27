@@ -33,7 +33,6 @@
 			gpsa(
 				array(
 					'ID',
-					's',
 					'Section',
 					'view'
 				)
@@ -49,19 +48,7 @@
 			</style>
 EOF;
 
-		if(!$ID && !$Section && $s && $s != 'all_site_sections_opened_for_posting') {
-			$value = str_replace('"','\"',$s);
-			echo <<<EOF
-				<script language="javascript" type="text/javascript">
-					$(document).ready(function() {
-						$("#section option[value={$value}]").attr("selected","selected");
-						$("#write-sort p:last").css("display","none");
-					});
-				</script>
-EOF;
-		}
-
-		if(!$s && !$Section && !$ID && !$view) {
+		if(!$Section && !$ID && !$view) {
 			echo <<<EOF
 				<script type="text/javascript">
 					$(document).ready(function() {
@@ -82,14 +69,13 @@ EOF;
 			gpsa(
 				array(
 					'ID',
-					's',
 					'Section',
 					'view'
 				)
 			)
 		);
 
-		if(!$s && !$Section && !$ID && !$view) {
+		if(!$Section && !$ID && !$view) {
 			echo 
 				'<div id="rah_write_each_section_container">'.n.
 				'	<h1>'.gTxt('tab_write').' &#8250; '.gTxt('tab_sections').' &#8250; '.gTxt('select').'</h1>'.n.
@@ -105,7 +91,7 @@ EOF;
 			foreach($rs as $a) {
 				extract($a);
 				echo 
-					'		<li><a href="?event=article&amp;s='.htmlspecialchars($name).'">'.htmlspecialchars($title).'</a></li>'.n;
+					'		<li><a href="?event=article&amp;Section='.htmlspecialchars($name).'">'.htmlspecialchars($title).'</a></li>'.n;
 			}
 
 			echo 
