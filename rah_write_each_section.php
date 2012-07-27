@@ -41,9 +41,8 @@
 
 		echo <<<EOF
 			<style type="text/css">
-				#rah_write_each_section_container {
-					width: 350px;
-					margin: 15px auto;
+				#rah_write_each_section_container .txp-grid-cell {
+					width: 294px;
 				}
 			</style>
 EOF;
@@ -76,28 +75,24 @@ EOF;
 		);
 
 		if(!$Section && !$ID && !$view) {
-			echo 
-				'<div id="rah_write_each_section_container">'.n.
-				'	<h1>'.gTxt('tab_write').' &#8250; '.gTxt('tab_sections').' &#8250; '.gTxt('select').'</h1>'.n.
-				'	<ul>'.n;
 			
 			$rs = 
 				safe_rows(
-					'title,name',
+					'title, name',
 					'txp_section',
-					"name != 'default' and in_rss = '1' order by title ASC"
+					"name != 'default' order by title ASC" // and in_rss = '1'
 				);
 
 			foreach($rs as $a) {
-				extract($a);
-				echo 
-					'		<li><a href="?event=article&amp;Section='.htmlspecialchars($name).'">'.htmlspecialchars($title).'</a></li>'.n;
+				$out[] = 
+					'<div class="txp-grid-cell">'.
+						'<p><a href="?event=article&amp;Section='.htmlspecialchars($a['name']).'">'.
+							htmlspecialchars($a['title']).
+						'</a></p>'.
+					'</div>';
 			}
-
-			echo 
-				'		<li><strong><a href="?event=article&amp;s=all_site_sections_opened_for_posting">'.gTxt('advanced_options').'</a></strong></li>'.n.
-				'	</ul>'.n.
-				'</div>'.n;
+			
+			echo '<div id="rah_write_each_section_container" class="txp-grid">'.implode('', $out).'</div>';
 		}
 	}
 
