@@ -40,6 +40,10 @@
 				#rah_write_each_section_container .txp-grid-cell {
 					width: 294px;
 				}
+				#rah_write_each_section_container span {
+					float: right;
+					margin: 0 0 0 0.3em;
+				}
 			</style>
 EOF;
 
@@ -70,17 +74,22 @@ EOF;
 			
 			$rs = 
 				safe_rows(
-					'title, name',
+					'title, name, (SELECT count(*) FROM '.safe_pfx('textpattern').' articles WHERE articles.Section = txp_section.name) AS article_count, in_rss',
 					'txp_section',
-					"name != 'default' order by title ASC" // and in_rss = '1'
+					"name != 'default' order by title ASC"
 				);
 
 			foreach($rs as $a) {
 				$out[] = 
 					'<div class="txp-grid-cell">'.
-						'<p><a href="?event=article&amp;Section='.htmlspecialchars($a['name']).'">'.
-							htmlspecialchars($a['title']).
-						'</a></p>'.
+						'<p>'.
+							'<a href="?event=article&amp;Section='.htmlspecialchars($a['name']).'">'.
+								htmlspecialchars($a['title']).
+							'</a>'.n.
+							'<span class="information">'.$a['article_count'].'</span>'.
+							($a['in_rss'] ? '<span class="success">RSS</span>' : '').
+							'<br />'.$a['name'].
+						'</p>'.
 					'</div>';
 			}
 			
