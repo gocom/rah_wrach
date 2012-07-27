@@ -1,0 +1,38 @@
+h1. rah_write_each_section
+
+p. A tiny plugin that allows users pick section before going to the actual writing page. Therefor, in example new will go to the correct section by the writer that possibly is your client, not you that knows everything about Textpattern. This plugin is "an answer to a post by cuba":http://forum.textpattern.com/viewtopic.php?id=27652
+
+* Version: 0.1
+* Updated: 2008/07/13 19:10 GMT+2
+
+h3. Table of Contents
+
+* "Intro and description":#intro-and-description
+* "List of features":#list-of-features
+* "Requirements":#requirements
+* "Installation and usage":#installation-and-usage
+
+h3(#intro-and-description). Intro and description
+
+p. The plugin, rah_write_each_section allows backend users pick a section before going to the write panel. Therefor posts will always go to the correct sections. Usage is simple and after posting the section is, ofcorse, changable. Also the regular writing view is available by "Advanced options"-writing method on the section select screen.
+
+h3(#list-of-features). List of features
+
+* Outputs list of sections before actual write panel
+* Only sections that have feeds enabled are in the list
+* Valid XHTML and clean Javascript
+
+h3(#requirements). Requirements
+
+p. Rah_write_each_section minimum requirements:
+
+* Textpattern 4.0.4+
+* Textpattern with jQuery
+
+p. Recommended:
+
+* Textpattern 4.0.6+
+
+h3(#installation-and-usage). Installation and usage
+
+p. The general simple behavior stands: paste plugin code to the plugin installer textarea and run the automatic setup. Then just activate the plugin and it's ready, the section list is shown before writing panel.
