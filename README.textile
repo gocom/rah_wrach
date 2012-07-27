@@ -16,7 +16,7 @@ h2. Requirements
 
 p. Rah_write_each_section minimum requirements:
 
-* Textpattern 4.5.0 or newer.
+* Textpattern v4.5.0 or newer.
 
 h2. Installation and usage
 
@@ -27,6 +27,11 @@ h2. Installation and usage
 # All done. The section list will be now on shown before writing panel.
 
 h2. Changelog
+
+h3. Version 0.3 - upcoming
+
+* Updated look and feel.
+* Textpattern v4.5.0 compatibility.
 
 h3. Version 0.2 - 2010/12/22
 
