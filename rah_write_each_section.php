@@ -62,7 +62,7 @@ class rah_write_each_section {
 		echo <<<EOF
 			<style type="text/css">
 				#rah_write_each_section_container .txp-grid-cell {
-					width: 294px;
+					width: 234px;
 				}
 				#rah_write_each_section_container .information,
 				#rah_write_each_section_container .success {
