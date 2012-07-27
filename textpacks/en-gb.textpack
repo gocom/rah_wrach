@@ -1,6 +1,6 @@
 #@admin
 #Default language, en-us, en-gb
-rah_write_each_section_title => Write a new article
+rah_write_each_section_title => Write new article
 rah_write_each_section_start_by => Start by choosing your section of choice.
 rah_write_each_section_frontpage_label => FRONT
 rah_write_each_section_rss_label => RSS
