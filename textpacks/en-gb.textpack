@@ -1,0 +1,4 @@
+#@admin
+#Default language, en-us, en-gb
+rah_write_each_section_title => Write a new article
+rah_write_each_section_start_by => Start by choosing your section of choice.

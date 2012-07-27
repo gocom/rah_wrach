@@ -102,7 +102,10 @@ EOF;
 					'</div>';
 			}
 			
-			echo '<div id="rah_write_each_section_container" class="txp-grid">'.implode('', $out).'</div>';
+			echo 
+				'<h1 class="txp-heading">'.gTxt('rah_write_each_section_title').'</h1>'.
+				'<p class="information alert-block">'.gTxt('rah_write_each_section_start_by').'</p>'.
+				'<div id="rah_write_each_section_container" class="txp-grid">'.implode('', $out).'</div>';
 		}
 	}
 }
