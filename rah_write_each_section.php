@@ -97,7 +97,8 @@ EOF;
 						'<a href="?event=article&amp;Section='.txpspecialchars($a['name']).'">'.
 							txpspecialchars($a['title']).
 						'</a>'.n.
-						'<a href="?event=list'.a.'search_method=section'.a.'crit=&quot;'.txpspecialchars($a['name']).'&quot;" class="information"><small>'.$a['article_count'].'</small></a><br />'.
+						($a['article_count']? '<a href="?event=list'.a.'search_method=section'.a.'crit=&quot;'.txpspecialchars($a['name']).'&quot;" class="information"><small>'.$a['article_count'].'</small></a>' : '').
+						'<br />'.
 						txpspecialchars($a['name']).
 						($a['on_frontpage'] ? '<small class="success">'.gTxt('rah_write_each_section_frontpage_label').'</small>' : '').
 						($a['in_rss'] ? '<small class="success">'.gTxt('rah_write_each_section_rss_label').'</small>' : '').
