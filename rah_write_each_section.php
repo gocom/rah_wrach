@@ -82,7 +82,7 @@ EOF;
 		if($Section || $ID || $view) {
 			return;
 		}
-			
+		
 		$rs = 
 			safe_rows(
 				'title, name, (SELECT count(*) FROM '.safe_pfx('textpattern').' articles WHERE articles.Section = txp_section.name) AS article_count, in_rss',
