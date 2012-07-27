@@ -159,15 +159,15 @@ EOF;
 						($a['article_count']? '<a href="?event=list'.a.'search_method=section'.a.'crit=&quot;'.txpspecialchars($a['name']).'&quot;" class="information"><small>'.$a['article_count'].'</small></a>' : '').
 						'<br />'.
 						txpspecialchars($a['name']).
-						($a['on_frontpage'] ? '<small class="success">'.gTxt('rah_write_each_section_frontpage_label').'</small>' : '').
-						($a['in_rss'] ? '<small class="success">'.gTxt('rah_write_each_section_rss_label').'</small>' : '').
+						($a['on_frontpage'] ? '<small class="success">'.gTxt('rah_wrach_frontpage_label').'</small>' : '').
+						($a['in_rss'] ? '<small class="success">'.gTxt('rah_wrach_rss_label').'</small>' : '').
 					'</p>'.
 				'</div>';
 		}
 		
 		echo 
-			'<h1 class="txp-heading">'.gTxt('rah_write_each_section_title').'</h1>'.
-			'<p class="information alert-block">'.gTxt('rah_write_each_section_start_by').'</p>'.
+			'<h1 class="txp-heading">'.gTxt('rah_wrach_title').'</h1>'.
+			'<p class="information alert-block">'.gTxt('rah_wrach_start_by').'</p>'.
 			'<div id="rah_wrach" class="txp-grid">'.implode('', $out).'</div>';
 	}
 }
