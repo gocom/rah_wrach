@@ -95,7 +95,7 @@ EOF;
 				'<div class="txp-grid-cell">'.
 					'<p>'.
 						'<a href="?event=article&amp;Section='.txpspecialchars($a['name']).'">'.
-								txpspecialchars($a['title']).
+							txpspecialchars($a['title']).
 						'</a>'.n.
 						'<a href="?event=list'.a.'search_method=section'.a.'crit=&quot;'.txpspecialchars($a['name']).'&quot;" class="information">'.$a['article_count'].'</a>'.
 							($a['in_rss'] ? '<span class="success">RSS</span>' : '').
