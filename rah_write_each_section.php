@@ -36,14 +36,19 @@ class rah_write_each_section {
 		
 		global $event;
 		
-		if($event != 'article')
+		if($event != 'article') {
 			return;
+		}
 
 		extract(gpsa(array(
 			'ID',
 			'Section',
 			'view'
 		)));
+		
+		if($Section || $ID || $view) {
+			return;
+		}
 
 		echo <<<EOF
 			<style type="text/css">
@@ -54,18 +59,11 @@ class rah_write_each_section {
 					float: right;
 					margin: 0 0 0 0.3em;
 				}
+				form#article_form {
+					display: none;
+				}
 			</style>
 EOF;
-
-		if(!$Section && !$ID && !$view) {
-			echo <<<EOF
-				<script type="text/javascript">
-					$(document).ready(function() {
-						$("form[name=article], form#article_form").remove();
-					});
-				</script>
-EOF;
-		}
 	}
 
 	/**
