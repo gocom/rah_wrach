@@ -119,7 +119,7 @@ EOF;
 			return;
 		}
 		
-		ob_end_clean();
+		ob_clean();
 		pagetop(gTxt('tab_write'));
 		
 		$sql[] = "name != 'default'";
