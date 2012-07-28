@@ -87,16 +87,6 @@ class rah_wrach {
 			return;
 		}
 
-		extract(gpsa(array(
-			'ID',
-			'Section',
-			'view'
-		)));
-		
-		if($Section || $ID || $view) {
-			return;
-		}
-
 		echo <<<EOF
 			<style type="text/css">
 				#rah_wrach .txp-grid-cell {
@@ -106,9 +96,6 @@ class rah_wrach {
 				#rah_wrach .success {
 					float: right;
 					margin-left: 0.3em;
-				}
-				form#article_form {
-					display: none;
 				}
 			</style>
 EOF;
@@ -131,6 +118,9 @@ EOF;
 		if($Section || $ID || $view) {
 			return;
 		}
+		
+		ob_end_clean();
+		pagetop(gTxt('tab_write'));
 		
 		$sql[] = "name != 'default'";
 		
