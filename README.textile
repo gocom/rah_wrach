@@ -1,5 +1,7 @@
 h1. rah_write_each_section
 
+p. "Project page":http://rahforum.biz/plugins/rah_write_each_section | "Twitter":http://twitter.com/gocom | "GitHub":https://github.com/gocom/rah_write_each_section | "Support forum":http://forum.textpattern.com/viewtopic.php?id=27755 | "Donate":http://rahforum.biz/donate/rah_write_each_section
+
 p. A tiny plugin that allows users to pick section before going to the actual writing panel. This plugin is "an answer to a post by cuba":http://forum.textpattern.com/viewtopic.php?id=27652.
 
 h2. Intro and description
