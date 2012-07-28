@@ -139,14 +139,15 @@ EOF;
 		}
 		
 		if($s) {
-			$sql[] = 'name IN('.implode(',', quote_list(do_list($s))).')';
+			$s = implode(',', quote_list(do_list($s)));
+			$sql[] = "name IN({$s})";
 		}
 		
 		$rs = 
 			safe_rows(
 				'title, name, (SELECT count(*) FROM '.safe_pfx('textpattern').' articles WHERE articles.Section = txp_section.name) AS article_count, in_rss, on_frontpage',
 				'txp_section',
-				implode(' and ', $sql).' order by title ASC'
+				implode(' and ', $sql).' order by '.($s ? 'FIELD(name,'.$s.')' : 'title ASC')
 			);
 
 		foreach($rs as $a) {
