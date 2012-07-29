@@ -1,4 +1,4 @@
-h1. rah_write_each_section
+h1. rah_wrach
 
 p. "Project page":http://rahforum.biz/plugins/rah_write_each_section | "Twitter":http://twitter.com/gocom | "GitHub":https://github.com/gocom/rah_write_each_section | "Support forum":http://forum.textpattern.com/viewtopic.php?id=27755 | "Donate":http://rahforum.biz/donate/rah_write_each_section
 
@@ -6,7 +6,7 @@ p. A tiny plugin that allows users to pick section before going to the actual wr
 
 h2. Intro and description
 
-p. Rah_write_each_section adds extra step to article posting; the plugin makes site authors pick the section before going to the actual write panel. The extra step will hopefully increase the change of the articles actually going to correct sections. Super-serious news don't look that nice in Jokes section.
+p. Rah_wrach adds extra step to article posting; the plugin makes site authors pick the section before going to the actual write panel. The extra step will hopefully increase the change of the articles actually going to correct sections. Super-serious news don't look that nice in Jokes section.
 
 h2. List of features
 
@@ -16,7 +16,7 @@ h2. List of features
 
 h2. Requirements
 
-p. Rah_write_each_section minimum requirements:
+p. Rah_wrach minimum requirements:
 
 * Textpattern v4.5.0 or newer.
 

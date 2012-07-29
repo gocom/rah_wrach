@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Rah_write_each_section plugin for Textpattern CMS.
+ * Rah_wrach plugin for Textpattern CMS.
  *
  * @author Jukka Svahn
  * @date 2008-
