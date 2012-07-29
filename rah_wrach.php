@@ -136,8 +136,10 @@ EOF;
 		
 		$sql[] = "name != 'default'";
 		
-		if(!$s = get_pref(__CLASS__.'_s.'.$txp_user)) {
-			$s = $prefs[__CLASS__.'_show_sections'];
+		$s = $prefs[__CLASS__.'_show_sections'];
+		
+		if(isset($prefs[__CLASS__.'_s.'.$txp_user])) {
+			$s = $prefs[__CLASS__.'_s.'.$txp_user];
 		}
 		
 		if($s) {
