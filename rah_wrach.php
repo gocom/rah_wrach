@@ -48,6 +48,7 @@ class rah_wrach {
 		foreach(
 			array(
 				'show_sections' => array('text_input', ''),
+				'hide_section_input' => array('yesnoradio', 0),
 			) as $name => $val
 		) {
 			$n = __CLASS__.'_'.$name;
@@ -81,7 +82,7 @@ class rah_wrach {
 
 	public function head() {
 		
-		global $event;
+		global $event, $prefs;
 		
 		if($event != 'article') {
 			return;
@@ -99,6 +100,17 @@ class rah_wrach {
 				}
 			</style>
 EOF;
+
+		if($prefs['rah_wrach_hide_section_input']) {
+			echo <<<EOF
+				<style type="text/css">
+					#write-sort .section {
+						display: none;
+					}
+				</style>
+EOF;
+		}
+
 	}
 
 	/**

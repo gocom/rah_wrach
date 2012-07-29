@@ -5,3 +5,4 @@ rah_wrach_frontpage_label => FRONT
 rah_wrach_rss_label => RSS
 rah_wrach => Wrach
 rah_wrach_show_sections => Display the following sections (comma-separated)
+rah_wrach_hide_section_input => Hide the section input?
