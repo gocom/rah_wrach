@@ -4,7 +4,7 @@ p. "Project page":http://rahforum.biz/plugins/rah_write_each_section | "Twitter"
 
 p. A tiny plugin that allows users to pick section before going to the actual writing panel. This plugin is "an answer to a post by cuba":http://forum.textpattern.com/viewtopic.php?id=27652.
 
-h2. Intro and description
+h2. Basics
 
 p. Rah_wrach adds extra step to article posting; the plugin makes site authors pick the section before going to the actual write panel. The extra step will hopefully increase the change of the articles actually going to correct sections. Super-serious news don't look that nice in Jokes section.
 
@@ -16,7 +16,7 @@ h2. List of features
 
 h2. Requirements
 
-p. Rah_wrach minimum requirements:
+p. Rah_wrach's minimum requirements:
 
 * Textpattern v4.5.0 or newer.
 
@@ -27,6 +27,18 @@ h2. Installation and usage
 # Run the automatic setup.
 # When the installation is done, just activate the plugin.
 # All done. The section list will be now on shown before writing panel.
+
+h2. Preferences
+
+p. Todo
+
+h3. Display the following sections (comma-separated)
+
+p. Todo
+
+h3. Hide the section input?
+
+p. If set to _yes_, the _Sections_ selection field on the "Write panel's":http://textpattern.net/wiki/index.php?title=Write editor is permanently hidden. Once a section is chosen from the prompt, the editor won't offer an option to change the section. You will still be able to change the section for an already published article with multi-editing tool residing on the "Articles list":http://textpattern.net/wiki/index.php?title=Articles.
 
 h2. Changelog
 
