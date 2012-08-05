@@ -1,0 +1,10 @@
+#@admin
+#@language fi-fi
+rah_wrach_start_by => Aloita valitsemalla osio.
+rah_wrach_frontpage_label => ETU
+rah_wrach_frontpage_tooltip => Julkaistaan etusivulla
+rah_wrach_rss_label => RSS
+rah_wrach_rss_tooltip => Mukana RSS-syötteissä
+rah_wrach => Wrach
+rah_wrach_show_sections => Näytä seuraavat osiot (pilkuin eroteltuna)
+rah_wrach_hide_section_input => Piilota osiot-kenttä?
