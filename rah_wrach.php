@@ -131,8 +131,6 @@ EOF;
 			return;
 		}
 		
-		include_once txpath.'/publish/taghandlers.php';
-		
 		ob_clean();
 		pagetop(gTxt('tab_write'));
 		
