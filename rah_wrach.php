@@ -164,8 +164,8 @@ EOF;
 						($a['article_count']? '<a href="?event=list'.a.'search_method=section'.a.'crit=&quot;'.txpspecialchars($a['name']).'&quot;" class="information"><small>'.$a['article_count'].'</small></a>' : '').
 						'<br />'.
 						txpspecialchars($a['name']).
-						($a['on_frontpage'] ? '<small class="success">'.gTxt('rah_wrach_frontpage_label').'</small>' : '').
-						($a['in_rss'] ? '<small class="success">'.gTxt('rah_wrach_rss_label').'</small>' : '').
+						($a['on_frontpage'] ? '<small title="'.gTxt('rah_wrach_frontpage_tooltip').'" class="success">'.gTxt('rah_wrach_frontpage_label').'</small>' : '').
+						($a['in_rss'] ? '<small title="'.gTxt('rah_wrach_rss_tooltip').'" class="success">'.gTxt('rah_wrach_rss_label').'</small>' : '').
 					'</p>'.
 				'</div>';
 		}
