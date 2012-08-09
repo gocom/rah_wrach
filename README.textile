@@ -45,6 +45,8 @@ h2. Changelog
 h3. Version 0.3 - upcoming
 
 * Updated look and feel.
+* Added: Finnish translation.
+* Added: French translation by "Patrick Lefevre":https://twitter.com/lowel.
 * Textpattern v4.5.0 compatibility.
 
 h3. Version 0.2 - 2010/12/22
