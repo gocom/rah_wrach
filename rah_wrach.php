@@ -13,9 +13,7 @@
  * http://www.gnu.org/licenses/gpl-2.0.html
  */
 
-	if(@txpinterface == 'admin') {
-		new rah_wrach();
-	}
+	new rah_wrach();
 
 class rah_wrach {
 	
@@ -70,7 +68,6 @@ class rah_wrach {
 	 */
 	
 	public function __construct() {
-		self::install();
 		register_callback(array($this, 'select'), 'article');
 		register_callback(array($this, 'head'), 'admin_side', 'head_end');
 		register_callback(array(__CLASS__, 'install'), 'plugin_lifecycle.'.__CLASS__);
