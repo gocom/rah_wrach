@@ -20,6 +20,12 @@ class rah_wrach {
 	static public $version = '0.2';
 	
 	/**
+	 * @var bool Skip the prompt
+	 */
+	
+	public $skip = true;
+	
+	/**
 	 * Installer
 	 */
 	
@@ -68,7 +74,8 @@ class rah_wrach {
 	 */
 	
 	public function __construct() {
-		register_callback(array($this, 'select'), 'article');
+		register_callback(array($this, 'prompt'), 'article', '', 1);
+		register_callback(array($this, 'select'), 'article', '', 0);
 		register_callback(array($this, 'head'), 'admin_side', 'head_end');
 		register_callback(array(__CLASS__, 'install'), 'plugin_lifecycle.'.__CLASS__);
 	}
@@ -111,6 +118,23 @@ EOF;
 	}
 
 	/**
+	 * Check prompt's visiblity
+	 */
+
+	public function prompt() {
+		
+		global $step;
+		
+		extract(gpsa(array(
+			'ID',
+			'Section',
+			'view'
+		)));
+		
+		$this->skip = ($Section || $ID || $view || $step);
+	}
+
+	/**
 	 * Section selection panel
 	 */
 
@@ -118,13 +142,7 @@ EOF;
 		
 		global $prefs, $txp_user;
 		
-		extract(gpsa(array(
-			'ID',
-			'Section',
-			'view'
-		)));
-
-		if($Section || $ID || $view) {
+		if($this->skip) {
 			return;
 		}
 		
