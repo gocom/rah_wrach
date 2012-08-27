@@ -2,57 +2,59 @@ h1. rah_wrach
 
 p. "Project page":http://rahforum.biz/plugins/rah_write_each_section | "Twitter":http://twitter.com/gocom | "GitHub":https://github.com/gocom/rah_wrach | "Support forum":http://forum.textpattern.com/viewtopic.php?id=27755 | "Donate":http://rahforum.biz/donate/rah_wrach
 
-p. A tiny plugin that allows users to pick section before going to the actual writing panel. This plugin is "an answer to a post by cuba":http://forum.textpattern.com/viewtopic.php?id=27652.
+p. Rah_wrach is a tiny admin-side plugin for "Textpattern CMS":http://textpattern.com that makes users to choose an article's designated "section":http://textpattern.net/wiki/index.php?title=Sections before going to the actual editor on the "Write panel":http://textpattern.net/wiki/index.php?title=Write.
 
 h2. Basics
 
-p. Rah_wrach adds extra step to article posting; the plugin makes site authors pick the section before going to the actual write panel. The extra step will hopefully increase the change of the articles actually going to correct sections. Super-serious news don't look that nice in Jokes section.
-
-h2. List of features
-
-* Adds extra step to article publishing: outputs list of sections before the actual write panel.
-* Only sections that have feeds enabled are shown in the list.
-* Outputs valid HTML and clean Javascript.
+p. Rah_wrach adds an extra step to the article publishing process. The plugin presents a prompt and makes site authors pick the section before going to the actual editor present on the "Write panel":":http://textpattern.net/wiki/index.php?title=Write. The extra step will hopefully increase the change of articles actually going to correct sections.
 
 h2. Requirements
 
 p. Rah_wrach's minimum requirements:
 
 * Textpattern v4.5.0 or newer.
+* PHP 5.2 or newer.
 
-h2. Installation and usage
+h2. Installing
 
-# Navigate to your Textpattern installation plugin pane: _TXP/Admin/Plugins_.
-# Paste the plugin code to the plugin installer textarea.
-# Run the automatic setup.
-# When the installation is done, just activate the plugin.
-# All done. The section list will be now on shown before writing panel.
+p. Rah_wrach's installation follows the standard plugin installation steps.
+
+# Download the plugin installation code.
+# Copy and paste the installation code into the _Install plugin_ box of your Textpattern Plugin pane.
+# Run the automated setup.
+# After the setup is done, activate the plugin. Done.
 
 h2. Preferences
 
-p. Todo
+p. Rah_wrach has few settings which can be used to configure the plugin. All the available settings can be found from Textpattern's "Advanced Preferences":http://textpattern.net/wiki/index.php?title=Advanced_Preferences panel, organized under a *Wrach* section. The following settings will be present.
 
 h3. Display the following sections (comma-separated)
 
-p. Todo
+p. Sets which sections are listed in the section prompt. The field takes a comma-separated list of section names. Sections will be listed in the prompt in the order they are specified in the field.
+
+bc. news, articles, design
+
+p. The above would bring News section to the top and listing Design as the last. If the field is left empty, all sections are present in the prompt, sorted in an alphabetical order.
 
 h3. Hide the section input?
 
-p. If set to _yes_, the _Sections_ selection field on the "Write panel's":http://textpattern.net/wiki/index.php?title=Write editor is permanently hidden. Once a section is chosen from the prompt, the editor won't offer an option to change the section. You will still be able to change the section for an already published article with multi-editing tool residing on the "Articles list":http://textpattern.net/wiki/index.php?title=Articles.
+p. If set to _Yes_, the _Sections_ selection field on the "Write panel's":http://textpattern.net/wiki/index.php?title=Write editor is permanently hidden. Once a section is chosen from the prompt, the editor won't offer an option to change the section. You will still be able to change the section for an already published article with the multi-editing tool residing on the "Article list":http://textpattern.net/wiki/index.php?title=Articles panel.
 
 h2. Changelog
 
 h3. Version 0.3 - upcoming
 
-* Updated look and feel.
+* Changed: New look and feel for the prompt. Uses a native grid layout.
+* Added: Settings to the Preferences panel.
 * Added: Finnish translation.
 * Added: French translation by "Patrick Lefevre":https://twitter.com/lowel.
 * Textpattern v4.5.0 compatibility.
+* Now requires Textpattern 4.5.0 or newer.
 
 h3. Version 0.2 - 2010/12/22
 
 * Now compatible with TXP 4.3.0. Thank you, "Phil Wareham":http://forum.textpattern.com/viewtopic.php?pid=238736#p238736, for reporting.
-* Moved JavaScript and inline styles to @<head>@.
+* Moved JavaScript and inline styles to the @<head>@.
 * Now requires TXP 4.0.7 or newer.
 
 h3. Version 0.1 - 2008/07/13
