@@ -1,6 +1,6 @@
 h1. rah_wrach
 
-p. "Project page":http://rahforum.biz/plugins/rah_write_each_section | "Twitter":http://twitter.com/gocom | "GitHub":https://github.com/gocom/rah_wrach | "Support forum":http://forum.textpattern.com/viewtopic.php?id=27755 | "Donate":http://rahforum.biz/donate/rah_wrach
+p. "Project page":http://rahforum.biz/plugins/rah_wrach | "Twitter":http://twitter.com/gocom | "GitHub":https://github.com/gocom/rah_wrach | "Support forum":http://forum.textpattern.com/viewtopic.php?id=27755 | "Donate":http://rahforum.biz/donate/rah_wrach
 
 p. Rah_wrach is a tiny admin-side plugin for "Textpattern CMS":http://textpattern.com that makes users to choose an article's designated "section":http://textpattern.net/wiki/index.php?title=Sections before going to the actual editor on the "Write panel":http://textpattern.net/wiki/index.php?title=Write.
 
