@@ -34,7 +34,7 @@ p. Sets which sections are listed in the section prompt. The field takes a comma
 
 bc. news, articles, design
 
-p. The above would bring News section to the top and list Design as the last. If the field is left empty, all sections are present in the prompt, sorted in an alphabetical order.
+p. The above would bring News section to the top and list Design the last. If the field is left empty, all sections are present in the prompt, sorted in an alphabetical order.
 
 h3. Hide the section input?
 
