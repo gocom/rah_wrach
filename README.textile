@@ -38,7 +38,7 @@ p. The above would bring News section to the top and listing Design as the last.
 
 h3. Hide the section input?
 
-p. If set to _Yes_, the _Sections_ selection field on the "Write panel's":http://textpattern.net/wiki/index.php?title=Write editor is permanently hidden. Once a section is chosen from the prompt, the editor won't offer an option to change the section. You will still be able to change the section for an already published article with the multi-editing tool residing on the "Article list":http://textpattern.net/wiki/index.php?title=Articles panel.
+p. If set to _Yes_, the _Sections_ selection field on the "Write panel's":http://textpattern.net/wiki/index.php?title=Write editor is permanently hidden. Once a section is chosen from the prompt, the editor won't offer an option to change the section. You will still be able to change the section for an already published article with the multi-editing tool residing on the "Article":http://textpattern.net/wiki/index.php?title=Articles list.
 
 h2. Changelog
 
