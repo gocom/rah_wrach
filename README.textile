@@ -6,7 +6,7 @@ p. Rah_wrach is a tiny admin-side plugin for "Textpattern CMS":http://textpatter
 
 h2. Basics
 
-p. Rah_wrach adds an extra step to the article publishing process. The plugin presents a prompt and makes site authors pick the section before going to the actual editor present on the "Write panel":":http://textpattern.net/wiki/index.php?title=Write. The extra step will hopefully increase the change of articles actually going to correct sections.
+p. Rah_wrach adds an extra step to the article publishing process. The plugin presents a prompt and makes site authors pick the section before going to the actual editor present on the "Write panel":http://textpattern.net/wiki/index.php?title=Write. The extra step will hopefully increase the change of articles actually going to correct sections.
 
 h2. Requirements
 
