@@ -17,7 +17,7 @@
 
 class rah_wrach {
 	
-	static public $version = '0.2';
+	static public $version = '0.3';
 	
 	/**
 	 * @var bool Skip the prompt
