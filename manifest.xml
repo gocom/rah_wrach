@@ -1,7 +1,7 @@
 <manifest>
 
 	<name>rah_wrach</name>
-	<description>Eases writers job: an individual Write page for every section</description>
+	<description>Sections come first</description>
 	
 	<version>0.2</version>
 	<type>3</type>
