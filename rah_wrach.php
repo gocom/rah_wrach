@@ -74,10 +74,12 @@ class rah_wrach {
 	 */
 	
 	public function __construct() {
+		add_privs('plugin_prefs.'.__CLASS__, '1,2');
+		register_callback(array(__CLASS__, 'install'), 'plugin_lifecycle.'.__CLASS__);
+		register_callback(array($this, 'prefs'), 'plugin_prefs.'.__CLASS__);
 		register_callback(array($this, 'prompt'), 'article', '', 1);
 		register_callback(array($this, 'select'), 'article', '', 0);
 		register_callback(array($this, 'head'), 'admin_side', 'head_end');
-		register_callback(array(__CLASS__, 'install'), 'plugin_lifecycle.'.__CLASS__);
 	}
 
 	/**
@@ -181,8 +183,8 @@ EOF;
 					'<p class="clearfix">'.
 						'<a href="?event=article&amp;Section='.txpspecialchars($a['name']).'">'.
 							txpspecialchars($a['title']).
-						'</a>'.n.
-						($a['article_count']? '<a href="?event=list'.a.'search_method=section'.a.'crit=&quot;'.txpspecialchars($a['name']).'&quot;" class="information"><small>'.$a['article_count'].'</small></a>' : '').
+						'</a>'.
+						($a['article_count'] ? '<a href="?event=list&amp;search_method=section&amp;crit=&quot;'.txpspecialchars($a['name']).'&quot;" class="information"><small>'.$a['article_count'].'</small></a>' : '').
 						'<br />'.
 						preg_replace('#^/index\.php\?#', '/?', substr(pagelinkurl(array('s' => $a['name'])), strlen(hu)-1)).
 						($a['on_frontpage'] ? '<small title="'.gTxt('rah_wrach_frontpage_tooltip').'" class="success">'.gTxt('rah_wrach_frontpage_label').'</small>' : '').
@@ -194,6 +196,19 @@ EOF;
 		echo 
 			'<h1 class="txp-heading">'.gTxt('tab_write').'</h1>'.
 			'<div id="rah_wrach" class="txp-grid">'.implode('', $out).'</div>';
+	}
+
+	/**
+	 * Options page
+	 */
+
+	public function prefs() {
+		header('Location: ?event=prefs&step=advanced_prefs#prefs-rah_wrach_show_sections');
+		
+		echo 
+			'<p>'.n.
+			'	<a href="?event=prefs&amp;step=advanced_prefs#prefs-rah_wrach_show_sections">'.gTxt('continue').'</a>'.
+			'</p>';
 	}
 }
 
