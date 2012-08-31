@@ -146,9 +146,7 @@ EOF;
 			return;
 		}
 		
-		ob_clean();
-		pagetop(gTxt('tab_write'));
-		
+		$sql = array();
 		$sql[] = "name != 'default'";
 		
 		$s = $prefs[__CLASS__.'_show_sections'];
@@ -168,6 +166,14 @@ EOF;
 				'txp_section',
 				implode(' and ', $sql).' order by '.($s ? 'FIELD(name,'.$s.')' : 'title ASC')
 			);
+		
+		if(!$rs) {
+			return;
+		}
+		
+		ob_clean();
+		pagetop(gTxt('tab_write'));
+		$out = array();
 
 		foreach($rs as $a) {
 			$out[] = 
