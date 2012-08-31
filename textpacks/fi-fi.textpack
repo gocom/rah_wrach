@@ -1,6 +1,5 @@
 #@admin
 #@language fi-fi
-rah_wrach_start_by => Aloita valitsemalla osio.
 rah_wrach_frontpage_label => ETU
 rah_wrach_frontpage_tooltip => Julkaistaan etusivulla
 rah_wrach_rss_label => RSS

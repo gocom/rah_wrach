@@ -187,7 +187,6 @@ EOF;
 		
 		echo 
 			'<h1 class="txp-heading">'.gTxt('tab_write').'</h1>'.
-			'<p class="information alert-block">'.gTxt('rah_wrach_start_by').'</p>'.
 			'<div id="rah_wrach" class="txp-grid">'.implode('', $out).'</div>';
 	}
 }

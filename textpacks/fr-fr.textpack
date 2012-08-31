@@ -1,6 +1,5 @@
 #@admin
 #@language fr-fr
-rah_wrach_start_by => Sélectionnez la page de votre choix :
 rah_wrach_frontpage_label => Accueil
 rah_wrach_frontpage_tooltip => Publié en page d'accueil
 rah_wrach_rss_label => RSS

@@ -1,6 +1,5 @@
 #@admin
 #Default language, en-us, en-gb
-rah_wrach_start_by => Start by choosing your section of choice.
 rah_wrach_frontpage_label => FRONT
 rah_wrach_frontpage_tooltip => Published on the frontpage
 rah_wrach_rss_label => RSS
