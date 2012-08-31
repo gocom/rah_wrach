@@ -88,7 +88,7 @@ class rah_wrach {
 
 	public function head() {
 		
-		global $event, $prefs;
+		global $event;
 		
 		if($event != 'article') {
 			return;
@@ -107,7 +107,7 @@ class rah_wrach {
 			</style>
 EOF;
 
-		if($prefs['rah_wrach_hide_section_input']) {
+		if(get_pref('rah_wrach_hide_section_input')) {
 			echo <<<EOF
 				<style type="text/css">
 					#write-sort .section {
@@ -142,7 +142,7 @@ EOF;
 
 	public function select() {
 		
-		global $prefs, $txp_user;
+		global $txp_user;
 		
 		if($this->skip) {
 			return;
@@ -151,22 +151,18 @@ EOF;
 		$sql = array();
 		$sql[] = "name != 'default'";
 		
-		$s = $prefs[__CLASS__.'_show_sections'];
+		$sections = get_pref('rah_wrach_s.'.$txp_user, get_pref('rah_wrach_show_sections'));
 		
-		if(isset($prefs[__CLASS__.'_s.'.$txp_user])) {
-			$s = $prefs[__CLASS__.'_s.'.$txp_user];
-		}
-		
-		if($s) {
-			$s = implode(',', quote_list(do_list($s)));
-			$sql[] = "name IN({$s})";
+		if($sections) {
+			$sections = implode(',', quote_list(do_list($sections)));
+			$sql[] = "name IN({$sections})";
 		}
 		
 		$rs = 
 			safe_rows(
 				'title, name, (SELECT count(*) FROM '.safe_pfx('textpattern').' articles WHERE articles.Section = txp_section.name) AS article_count, in_rss, on_frontpage',
 				'txp_section',
-				implode(' and ', $sql).' order by '.($s ? 'FIELD(name,'.$s.')' : 'title ASC')
+				implode(' and ', $sql).' order by '.($sections ? 'FIELD(name,'.$sections.')' : 'title ASC')
 			);
 		
 		if(!$rs) {
