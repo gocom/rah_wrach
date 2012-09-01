@@ -151,7 +151,7 @@ EOF;
 		$sql = array();
 		$sql[] = "name != 'default'";
 		
-		$sections = get_pref('rah_wrach_s.'.$txp_user, get_pref('rah_wrach_show_sections'));
+		$sections = get_pref('rah_wrach_user_sections', get_pref('rah_wrach_show_sections'));
 		
 		if($sections) {
 			$sections = implode(',', quote_list(do_list($sections)));
