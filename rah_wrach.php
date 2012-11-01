@@ -182,13 +182,13 @@ EOF;
 		}
 
 		$rs = 
-			safe_rows(
+			safe_rows_start(
 				'title, name, (SELECT count(*) FROM '.safe_pfx('textpattern').' articles WHERE articles.Section = txp_section.name) AS article_count, in_rss, on_frontpage',
 				'txp_section',
 				implode(' and ', $sql).' order by '.($sections ? 'FIELD(name,'.$sections.')' : 'title ASC')
 			);
 
-		if (!$rs)
+		if (!numRows($rs))
 		{
 			return;
 		}
@@ -197,7 +197,7 @@ EOF;
 		pagetop(gTxt('tab_write'));
 		$out = array();
 
-		foreach ($rs as $a)
+		while ($a = nextRow($rs))
 		{
 			$out[] = 
 				'<div class="txp-grid-cell">'.
