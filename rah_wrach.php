@@ -3,11 +3,11 @@
 /**
  * Rah_wrach plugin for Textpattern CMS.
  *
- * @author Jukka Svahn
- * @date 2008-
+ * @author  Jukka Svahn
+ * @date    2008-
  * @license GNU GPLv2
- * @link http://rahforum.biz/plugins/rah_wrach
- * 
+ * @link    http://rahforum.biz/plugins/rah_wrach
+ *
  * Copyright (C) 2012 Jukka Svahn <http://rahforum.biz>
  * Licensed under GNU Genral Public License version 2
  * http://www.gnu.org/licenses/gpl-2.0.html
@@ -15,18 +15,33 @@
 
 	new rah_wrach();
 
+/**
+ * The plugin class.
+ */
+
 class rah_wrach
-{	
+{
+	/**
+	 * Version number.
+	 *
+	 * @var string
+	 */
+
 	static public $version = '0.3';
 
 	/**
-	 * @var bool Skip the prompt
+	 * If TRUE, skips the prompt.
+	 *
+	 * @var bool
 	 */
 
 	public $skip = true;
 
 	/**
-	 * Installer
+	 * Installer.
+	 *
+	 * @param string $event Plugin-lifecycle event
+	 * @param string $step  Plugin-lifecycle step
 	 */
 
 	static public function install($event = '', $step = '')
@@ -72,7 +87,7 @@ class rah_wrach
 	}
 
 	/**
-	 * Constructor
+	 * Constructor.
 	 */
 
 	public function __construct()
@@ -87,7 +102,7 @@ class rah_wrach
 	}
 
 	/**
-	 * Add styles and JavaScript to the <head>
+	 * Adds styles and JavaScript to the &lt;head&gt;.
 	 */
 
 	public function head()
@@ -126,7 +141,7 @@ EOF;
 	}
 
 	/**
-	 * Check prompt's visiblity
+	 * Checks prompt's visiblity.
 	 */
 
 	public function prompt()
@@ -143,7 +158,7 @@ EOF;
 	}
 
 	/**
-	 * Section selection panel
+	 * Prints section selection panel.
 	 */
 
 	public function select()
@@ -205,7 +220,9 @@ EOF;
 	}
 
 	/**
-	 * Options page
+	 * The plugin's options page.
+	 *
+	 * Redirects to preferences.
 	 */
 
 	public function prefs()
