@@ -42,6 +42,11 @@ p. If set to _Yes_, the _Sections_ selection field on the "Write panel's":http:/
 
 h2. Changelog
 
+h3. Version 0.4 - upcoming
+
+* Optimized peak memory usage.
+* Registered @prefs.rah_wrach@ privilege for the future.
+
 h3. Version 0.3 - 2012/08/31
 
 * Changed: New look and feel for the prompt. Uses a native grid layout, and displays extra information in the prompt.
