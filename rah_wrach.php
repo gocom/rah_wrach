@@ -28,22 +28,18 @@ class rah_wrach
 
     public function install()
     {
-        global $prefs;
-
         $position = 250;
-        $settings = array(
-            'show_sections' => array('text_input', ''),
-            'hide_section_input' => array('yesnoradio', 0),
-        );
 
-        foreach ($settings as $name => $val)
+        foreach (
+            array(
+                'rah_wrach_show_sections'      => array('text_input', ''),
+                'rah_wrach_hide_section_input' => array('yesnoradio', 0),
+            ) as $name => $val
+        )
         {
-            $n = __CLASS__.'_'.$name;
-
-            if (!isset($prefs[$n]))
+            if (get_pref($name, false) === false)
             {
-                set_pref($n, $val[1], __CLASS__, PREF_ADVANCED, $val[0], $position);
-                $prefs[$n] = $val[1];
+                set_pref($name, $val[1], 'rah_wrach', PREF_ADVANCED, $val[0], $position);
             }
 
             $position++;
