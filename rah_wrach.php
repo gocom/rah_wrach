@@ -15,14 +15,6 @@
 class rah_wrach
 {
     /**
-     * Version number.
-     *
-     * @var string
-     */
-
-    static public $version = '0.3';
-
-    /**
      * If TRUE, skips the prompt.
      *
      * @var bool
@@ -51,11 +43,6 @@ class rah_wrach
             return;
         }
 
-        if ((string) get_pref(__CLASS__.'_version') === self::$version)
-        {
-            return;
-        }
-
         $position = 250;
         $settings = array(
             'show_sections' => array('text_input', ''),
@@ -74,9 +61,6 @@ class rah_wrach
 
             $position++;
         }
-
-        set_pref(__CLASS__.'_version', self::$version, __CLASS__, 2, '', 0);
-        $prefs[__CLASS__.'_version'] = self::$version;
     }
 
     /**
