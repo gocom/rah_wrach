@@ -1,0 +1,11 @@
+{
+    "name"        : "rah_wrach",
+    "description" : "Sections come first",
+	"version"     : "0.3",
+	"type"        : 3,
+	"author"      : "Jukka Svahn",
+	"author_uri"  : "http://rahforum.biz",
+    "order"       : 5,
+	"flags"       : 3,
+	"help"        : {"file" : ["./README.textile"]}
+}
