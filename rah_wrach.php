@@ -24,24 +24,11 @@ class rah_wrach
 
     /**
      * Installer.
-     *
-     * @param string $event Plugin-lifecycle event
-     * @param string $step  Plugin-lifecycle step
      */
 
-    static public function install($event = '', $step = '')
+    public function install()
     {
         global $prefs;
-
-        if ($step == 'deleted')
-        {
-            safe_delete(
-                'txp_prefs',
-                "name like 'rah\_wrach\_%'"
-            );
-
-            return;
-        }
 
         $position = 250;
         $settings = array(
@@ -64,6 +51,18 @@ class rah_wrach
     }
 
     /**
+     * Uninstaller.
+     */
+
+    public function uninstall()
+    {
+        safe_delete(
+            'txp_prefs',
+            "name like 'rah\_wrach\_%'"
+        );
+    }
+
+    /**
      * Constructor.
      */
 
@@ -71,7 +70,8 @@ class rah_wrach
     {
         add_privs('plugin_prefs.'.__CLASS__, '1,2');
         add_privs('prefs.'.__CLASS__, '1,2');
-        register_callback(array(__CLASS__, 'install'), 'plugin_lifecycle.'.__CLASS__);
+        register_callback(array($this, 'install'), 'plugin_lifecycle.rah_wrach', 'installed');
+        register_callback(array($this, 'uninstall'), 'plugin_lifecycle.rah_wrach', 'deleted');
         register_callback(array($this, 'prefs'), 'plugin_prefs.'.__CLASS__);
         register_callback(array($this, 'prompt'), 'article', '', 1);
         register_callback(array($this, 'select'), 'article', '', 0);
