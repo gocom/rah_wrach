@@ -12,7 +12,7 @@
  * http://www.gnu.org/licenses/gpl-2.0.html
  */
 
-	new rah_wrach();
+	
 
 /**
  * The plugin class.
@@ -234,5 +234,7 @@ EOF;
 			'</p>';
 	}
 }
+
+new rah_wrach();
 
 ?>
