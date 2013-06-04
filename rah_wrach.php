@@ -64,11 +64,11 @@ class rah_wrach
 
     public function __construct()
     {
-        add_privs('plugin_prefs.'.__CLASS__, '1,2');
-        add_privs('prefs.'.__CLASS__, '1,2');
+        add_privs('plugin_prefs.rah_wrach', '1,2');
+        add_privs('prefs.rah_wrach', '1,2');
         register_callback(array($this, 'install'), 'plugin_lifecycle.rah_wrach', 'installed');
         register_callback(array($this, 'uninstall'), 'plugin_lifecycle.rah_wrach', 'deleted');
-        register_callback(array($this, 'prefs'), 'plugin_prefs.'.__CLASS__);
+        register_callback(array($this, 'prefs'), 'plugin_prefs.rah_wrach');
         register_callback(array($this, 'prompt'), 'article', '', 1);
         register_callback(array($this, 'select'), 'article', '', 0);
         register_callback(array($this, 'head'), 'admin_side', 'head_end');
