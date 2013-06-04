@@ -236,5 +236,3 @@ EOF;
 }
 
 new rah_wrach();
-
-?>
