@@ -21,6 +21,9 @@
  * along with rah_wrach. If not, see <http://www.gnu.org/licenses/>.
  */
 
+/**
+ * Plugin class.
+ */
 final class Rah_Wrach
 {
     /**
