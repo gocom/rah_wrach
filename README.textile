@@ -28,11 +28,11 @@ If set to _Yes_, the _Sections_ selection field on the "article":https://docs.te
 
 h2. Changelog
 
-h3. Version 0.4 - upcoming
+h3. Version 0.4.0 - 2019/03/31
 
 * Optimized peak memory usage.
-* Registered @prefs.rah_wrach@ privilege for the future.
-* Composer package.
+* Registered @prefs.rah_wrach@ privilege.
+* Published as a Composer package.
 
 h3. Version 0.3 - 2012/08/31
 
