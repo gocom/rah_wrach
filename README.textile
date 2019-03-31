@@ -1,6 +1,6 @@
 h1. rah_wrach
 
-"Packagist":https://packagist.org/packages/rah/rah_wrach "Issues":https://github.com/gocom/rah_wrach/issues | "Donate":https://rahforum.biz/donate/rah_wrach
+"Packagist":https://packagist.org/packages/rah/rah_wrach | "Issues":https://github.com/gocom/rah_wrach/issues | "Donate":https://rahforum.biz/donate/rah_wrach
 
 Rah_wrach adds an extra step to the "Textpattern CMS":https://textpattern.com article publishing process. The plugin presents a prompt and makes site authors pick the "section":https://docs.textpattern.com/administration/sections-panel before going to the actual editor present on the "Write panel":https://docs.textpattern.com/administration/write-panel. The extra step will hopefully increase the change of articles actually going to correct sections.
 
@@ -24,7 +24,7 @@ The above would bring News section to the top of the prompt and list Design the 
 
 h3. Hide the section input?
 
-If set to _Yes_, the _Sections_ selection field on the "Write panel's":http://textpattern.net/wiki/index.php?title=Write editor is permanently hidden. Once a section is chosen from the prompt, the editor won't offer an option to change the section. You will still be able to change the section for an existing article with the multi-editing tool residing on the "article":http://textpattern.net/wiki/index.php?title=Articles list.
+If set to _Yes_, the _Sections_ selection field on the "article":https://docs.textpattern.com/administration/write-panel editor is permanently hidden. Once a section is chosen from the prompt, the editor won't offer an option to change the section. You will still be able to change the section for an existing article with the multi-editing tool residing on the "article":http://textpattern.net/wiki/index.php?title=Articles list.
 
 h2. Changelog
 
