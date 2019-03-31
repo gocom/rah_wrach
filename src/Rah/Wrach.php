@@ -93,9 +93,6 @@ final class Rah_Wrach
 
         echo <<<EOF
             <style type="text/css">
-                #rah_wrach .txp-grid-cell {
-                    width: 294px;
-                }
                 #rah_wrach .information,
                 #rah_wrach .success {
                     float: right;
@@ -211,7 +208,7 @@ EOF;
             $out[] = tag_end('p') . tag_end('div');
         }
 
-        echo hed(gTxt('tab_write'), 1) .
+        echo hed(gTxt('tab_write'), 1, ['class' => 'txp-heading']) .
             tag(implode(n, $out), 'div', ['id' => 'rah_wrach', 'class' => 'txp-grid']);
     }
 
