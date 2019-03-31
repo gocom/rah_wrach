@@ -1,0 +1,30 @@
+{
+    "name": "rah/rah_wrach",
+    "description": "Textpattern CMS plugin for selecting article section",
+    "keywords": ["textpattern", "plugin"],
+    "homepage": "https://github.com/gocom/rah_wrach",
+    "license": "GPL-2.0",
+    "type": "textpattern-plugin",
+    "authors": [
+        {
+            "name": "Jukka Svahn",
+            "homepage": "https://rahforum.biz",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/gocom/rah_wrach/issues",
+        "source": "https://github.com/gocom/rah_wrach"
+    },
+    "require": {
+        "php": ">=7.2.0",
+        "textpattern/lock": ">=4.7.0",
+        "textpattern/installer": "*"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "3.*"
+    },
+    "scripts": {
+        "cs": "./vendor/bin/phpcs"
+    }
+}
