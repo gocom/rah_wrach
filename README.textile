@@ -33,6 +33,7 @@ h3. Version 0.4.0 - 2019/03/31
 * Optimized peak memory usage.
 * Registered @prefs.rah_wrach@ privilege.
 * Published as a Composer package.
+* Now requires Textpattern CMS 4.7.0 and PHP 7.2.0.
 
 h3. Version 0.3 - 2012/08/31
 
