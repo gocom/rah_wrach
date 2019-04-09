@@ -53,6 +53,8 @@ final class Rah_Wrach
      */
     public function install()
     {
+        create_pref('');
+
         $position = 250;
 
         $options = [
@@ -61,11 +63,7 @@ final class Rah_Wrach
         ];
 
         foreach ($options as $name => $val) {
-            if (get_pref($name, false) === false) {
-                set_pref($name, $val[1], 'rah_wrach', PREF_PLUGIN, $val[0], $position);
-            }
-
-            $position++;
+            create_pref($name, $val[1], 'rah_wrach', PREF_PLUGIN, $val[0], $position++);
         }
     }
 
@@ -74,10 +72,7 @@ final class Rah_Wrach
      */
     public function uninstall()
     {
-        safe_delete(
-            'txp_prefs',
-            "name like 'rah\_wrach\_%'"
-        );
+        remove_pref(null, 'rah_wrach');
     }
 
     /**
@@ -232,9 +227,7 @@ EOF;
      */
     public function prefs()
     {
-        header('Location: ?event=prefs&step=advanced_prefs#prefs-rah_wrach_show_sections');
-        echo graf(href(gTxt('continue'), [
-            'href' => '?event=prefs&amp;step=advanced_prefs#prefs-rah_wrach_show_sections'
-        ]));
+        header('Location: ?event=prefs');
+        echo graf(href(gTxt('continue'), ['href' => '?event=prefs']));
     }
 }

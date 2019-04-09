@@ -28,6 +28,11 @@ If set to _Yes_, the _Sections_ selection field on the "article":https://docs.te
 
 h2. Changelog
 
+h3. Version 0.4.1 - upcoming
+
+* Use preference API instead of direct queries in uninstaller.
+* Fix preference link on the plug-in panel.
+
 h3. Version 0.4.0 - 2019/03/31
 
 * Optimized peak memory usage.
