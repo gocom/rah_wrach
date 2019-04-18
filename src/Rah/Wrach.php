@@ -53,8 +53,6 @@ final class Rah_Wrach
      */
     public function install()
     {
-        create_pref('');
-
         $position = 250;
 
         $options = [
