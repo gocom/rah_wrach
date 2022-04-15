@@ -10,6 +10,8 @@ Using "Composer":https://getcomposer.org:
 
 bc. $ composer require rah/rah_wrach
 
+Or "download":https://github.com/gocom/rah_wrach/releases an installer.
+
 h2. Preferences
 
 Rah_wrach introduces few settings. All the available settings can be found from Textpattern's "preferences panel":https://docs.textpattern.com/administration/preferences-panel, organized under a *Wrach* section. The following settings will be present.
