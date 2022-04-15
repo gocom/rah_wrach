@@ -4,7 +4,7 @@
  * rah_wrach - Memcached templates for Textpattern CMS
  * https://github.com/gocom/rah_wrach
  *
- * Copyright (C) 2019 Jukka Svahn
+ * Copyright (C) 2022 Jukka Svahn
  *
  * This file is part of rah_wrach.
  *
@@ -46,6 +46,7 @@ final class Rah_Wrach
         register_callback([$this, 'prompt'], 'article', '', 1);
         register_callback([$this, 'select'], 'article', '', 0);
         register_callback([$this, 'head'], 'admin_side', 'head_end');
+        register_callback([$this, 'populateSection'], 'article_ui', 'partials_meta', 0);
     }
 
     /**
@@ -97,7 +98,7 @@ EOF;
         if (get_pref('rah_wrach_hide_section_input')) {
             echo <<<EOF
                 <style type="text/css">
-                    #write-sort .section {
+                    #txp-write-sort-group .section {
                         display: none;
                     }
                 </style>
@@ -203,6 +204,22 @@ EOF;
 
         echo hed(gTxt('tab_write'), 1, ['class' => 'txp-heading']) .
             tag(implode(n, $out), 'div', ['id' => 'rah_wrach', 'class' => 'txp-grid']);
+    }
+
+    /**
+     * Populate section selection.
+     *
+     * @param string $event
+     * @param string $step
+     * @param array $data
+     */
+    public function populateSection($event, $step, &$data)
+    {
+        $section = gps('Section');
+
+        if (!gps('view') && !gps('ID') && $section) {
+            $data['Section'] = $section;
+        }
     }
 
     /**

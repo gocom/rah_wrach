@@ -4,7 +4,7 @@
  * rah_wrach - Memcached templates for Textpattern CMS
  * https://github.com/gocom/rah_wrach
  *
- * Copyright (C) 2019 Jukka Svahn
+ * Copyright (C) 2022 Jukka Svahn
  *
  * This file is part of rah_wrach.
  *
