@@ -242,7 +242,7 @@ EOF;
      */
     public function prefs()
     {
-        header('Location: ?event=prefs');
-        echo graf(href(gTxt('continue'), ['href' => '?event=prefs']));
+        header('Location: ?event=prefs#prefs_group_rah_wrach');
+        echo graf(href(gTxt('continue'), ['href' => '?event=prefs#prefs_group_rah_wrach']));
     }
 }
