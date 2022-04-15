@@ -2,6 +2,8 @@ h1. rah_wrach
 
 "Download":https://github.com/gocom/rah_wrach/releases | "Packagist":https://packagist.org/packages/rah/rah_wrach | "Donate":https://rahforum.biz/donate/rah_wrach
 
+"!https://raw.githubusercontent.com/gocom/rah_wrach/screenshots/images/select-section.png!":https://raw.githubusercontent.com/gocom/rah_wrach/screenshots/images/select-section.png
+
 Rah_wrach adds an extra step to the "Textpattern CMS":https://textpattern.com article publishing process. The plugin presents a prompt and makes site authors pick the "section":https://docs.textpattern.com/administration/sections-panel before going to the actual editor present on the "Write panel":https://docs.textpattern.com/administration/write-panel. The extra step will hopefully increase the change of articles actually going to correct sections.
 
 h2. Install
