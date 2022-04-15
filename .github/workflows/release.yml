@@ -18,6 +18,15 @@ jobs:
                 id: build
                 uses: gocom/action-textpattern-package-plugin@master
 
+            -   name: Changelog
+                id: changelog
+                run: |
+                    contents="$(sed -e '1,/h2. Changelog/d' -e '/-----/,$d' README.textile | sed -e '1,/h3./d' -e '/h3./,$d')"
+                    contents="${contents//'%'/'%25'}"
+                    contents="${contents//$'\n'/'%0A'}"
+                    contents="${contents//$'\r'/'%0D'}"
+                    echo "::set-output name=contents::$contents"
+
             -   name: Create Release
                 id: create_release
                 uses: actions/create-release@master
@@ -26,6 +35,7 @@ jobs:
                 with:
                     tag_name: ${{ github.ref }}
                     release_name: ${{ github.ref }}
+                    body: ${{ steps.changelog.outputs.contents }}
                     draft: false
                     prerelease: false
 
