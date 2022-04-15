@@ -32,6 +32,7 @@ h2. Changelog
 
 h3. Version 0.4.1 - upcoming
 
+* Textpattern 4.8.x compatibility.
 * Use preference API instead of direct queries in uninstaller.
 * Fix preference link on the plug-in panel.
 
