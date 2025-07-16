@@ -1,6 +1,6 @@
 h1. rah_wrach
 
-"Download":https://github.com/gocom/rah_wrach/releases | "Packagist":https://packagist.org/packages/rah/rah_wrach | "Donate":https://rahforum.biz/donate/rah_wrach
+"Download":https://github.com/gocom/rah_wrach/releases | "Packagist":https://packagist.org/packages/rah/rah_wrach
 
 "!https://raw.githubusercontent.com/gocom/rah_wrach/screenshots/images/select-section.png!":https://raw.githubusercontent.com/gocom/rah_wrach/screenshots/images/select-section.png
 
